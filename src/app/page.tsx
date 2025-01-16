@@ -1,101 +1,178 @@
-import Image from "next/image";
+import { Profilepic } from "@/assets/images/Profilepic";
+import { Navbox } from "@/components/Navbox";
+import { ProfileCard } from "@/components/ProfileCard";
+import { SkillBox } from "@/components/SkillBox";
+import { NavIcons } from "@/assets/icons/nav-icons/NavIcons";
+import { SocialIcons } from "@/assets/icons/social-icons/SocialIcons";
+import { ProjectsCard } from "@/components/ProjectsCard";
+import Projectpic from "@/assets/images/Projectpic";
+import { ArrowIcons } from "@/assets/icons/social-icons/ArrowIcons";
+import { SkillIcons } from "@/assets/icons/skill-icons/SkillIcons";
+import { TextBox } from "@/components/TextBox";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
+      {/* Navbar */}
+      <div className="flex justify-center mb-12 mt-7">
+        <Navbox variant="navbox">
+          <div className="flex justify-between w-full">
+            {NavIcons.map((icon) => (
+              <div key={icon.id} className="p-1">
+                <icon.iconSVG />
+              </div>
+            ))}
+          </div>
+        </Navbox>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+      <div>
+        <div className="flex justify-center">
+          <div className="top-20 z-10 sticky max-h-fit">
+            <ProfileCard
+              imgURL={<Profilepic />}
+              name="MOHITH PRANAV"
+              description={
+                <>
+                  A Tech Enthusiast
+                  <br className="leading-tight" />
+                  building Innovative & Scalable
+                  <br className="leading-tight" />
+                  Web Applications.
+                </>
+              }
+              navboxContent={
+                <Navbox variant="profilebox">
+                  <div className="flex justify-between w-full">
+                    {SocialIcons.map((icon) => (
+                      <div key={icon.id} className="p-2">
+                        <icon.iconSVG />
+                      </div>
+                    ))}
+                  </div>
+                </Navbox>
+              }
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+          <div className="ml-28 font-framer w-2/4">
+            {/* Intro Section */}
+            <div className="text-8xl font-extrabold">
+              FULL STACK <br /> <div className="text-gray-500">DEVELOPER</div>
+            </div>
+            <div className="max-w-[40rem] mt-4 text-lg font-normal text-gray-250">
+              I’m a 3rd-year BTech student at SRM University, passionate about
+              solving complex problems and building scalable, efficient web
+              applications. Always eager to learn and grow, I embrace modern
+              technologies and continuously explore new tools to create
+              innovative, impactful solutions.
+            </div>
+            <div className="flex mt-10">
+              <div className="mr-12">
+                <div className="font-semibold text-7xl mb-2">+7</div>
+                <div>
+                  PROJECTS <br /> BUILD
+                </div>
+              </div>
+              <div className="mr-12">
+                <div className="font-semibold text-7xl mb-2">+100</div>
+                <div>
+                  DSA PROBLEMS <br /> SOLVED
+                </div>
+              </div>
+              <div>
+                <div className="font-semibold text-7xl mb-2">+12</div>
+                <div>
+                  TOOLS & <br /> TECHNOLOGIES
+                </div>
+              </div>
+            </div>
+
+            {/* Technical Skills Section */}
+            <div className="mt-20">
+              <div className="text-8xl font-extrabold">
+                TECHNICAL <br /> <div className="text-gray-500">SKILLS</div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+                {SkillIcons.map((icon) => (
+                  <div className="" key={icon.id}>
+                    <SkillBox
+                      imgURL={<icon.iconSVG />}
+                      name={icon.name}
+                      description={icon.description}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Projects Section */}
+            <div className="mt-20">
+              <div className="text-8xl font-extrabold mt-1">
+                PROJECTS <br /> <div className="text-gray-500">BUILT</div>
+                <div className="mt-2">
+                  <ProjectsCard
+                    imgURL={Projectpic()}
+                    title="Second Brain"
+                    description="Keep your brain happy"
+                    icon={<ArrowIcons />}
+                  />
+                  <ProjectsCard
+                    imgURL={Projectpic()}
+                    title="Second Brain"
+                    description="Keep your brain happy"
+                    icon={<ArrowIcons />}
+                  />
+                  <ProjectsCard
+                    imgURL={Projectpic()}
+                    title="Second Brain"
+                    description="Keep your brain happy"
+                    icon={<ArrowIcons />}
+                  />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6"></div>
+            </div>
+
+            {/* Contact Section */}
+            <div className="mt-20">
+              <div className="text-8xl font-extrabold">
+                LETS WORK <br /> <div className="text-gray-500">TOGETHER</div>
+              </div>
+              <div className="mt-20">
+                <div className="flex gap-4">
+                  <TextBox boxName="Name" text="Your Name" variant="primary" />
+                  <TextBox
+                    boxName="Email"
+                    text="Your@gmail.com"
+                    variant="primary"
+                  />
+                </div>
+
+                <div className="mt-3">
+                  <TextBox boxName="Budget" text="...." variant="secondary" />
+                </div>
+
+                <div className="mt-3">
+                  <TextBox
+                    boxName="Message"
+                    text="Message"
+                    variant="tertiary"
+                  />
+                </div>
+
+                <button className="h-10 w-[660px] text-white bg-[#F46C38] rounded-lg mt-4 mb-10px">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      {/* Footer Section */}
+      <div className="h-20 mt-32 justify-center items-center flex font-medium font-framer ">
+        Made by <p className="text-[#F46C38] ml-1"> Mohith Pranav</p>
+      </div>
     </div>
   );
 }

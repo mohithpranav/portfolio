@@ -9,13 +9,18 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #151312;
     --foreground: #ededed;
+    --font-family-Font-1: "Poppins";
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  @apply font-sans;
 }
