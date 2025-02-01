@@ -5,15 +5,17 @@ interface TextBoxProps {
 }
 
 const variantClass = {
-  primary: " h-10 w-80 rounded-lg ",
-  secondary: "h-10 rounded-xl w-[660px] ",
-  tertiary: "h-24 rounded-lg w-[660px] pb-14",
+  primary: " h-10 w-[182px]  sm:w-80 rounded-lg ",
+  secondary: "h-10 rounded-xl w-[370px] sm:w-[650px] ",
+  tertiary: "h-24 rounded-lg w-[370px] sm:w-[650px] pb-14",
 };
 
 export function TextBox({ boxName, text, variant }: TextBoxProps) {
   return (
-    <div>
-      <div className="text-gray-250 mb-2 text-xs font-medium">{boxName}</div>
+    <div className="">
+      <div className="text-gray-250 mb-2 text-xs font-medium flex flex-start">
+        <div>{boxName}</div>
+      </div>
       <input
         type="text"
         placeholder={text}

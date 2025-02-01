@@ -23,14 +23,14 @@ export default {
 
         gray: {
           500: "#353334",
-          400: "#252525",
+          400: "#1C1A19",
           300: "#6A6B6E",
           250: "#998F8F",
           225: "#999999",
         },
       },
       animation: {
-        slideDiagonal: "slideDiagonal 1s ease-out forwards",
+        slideDiagonal: "slideDiagonal 0.4s ease-out forwards",
       },
       keyframes: {
         slideDiagonal: {
@@ -39,7 +39,7 @@ export default {
         },
       },
       transitionDuration: {
-        "4000": "4000ms",
+        4000: "4000ms",
       },
     },
   },
