@@ -291,7 +291,7 @@ export default function Home() {
                 />
               </div>
 
-              <div className="mb-4 mt-4">
+              <div className="mb-2 mt-2">
                 <TextBox
                   boxName="Subject"
                   text="Subject"
