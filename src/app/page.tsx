@@ -165,11 +165,11 @@ export default function Home() {
               FULL STACK <br /> <span className="text-gray-500">DEVELOPER</span>
             </motion.div>
             <motion.div className="max-w-[40rem] mt-4 text-lg text-gray-250 ">
-              I am a third-year BTech student at SRM University, passionate
-              about solving complex problems and building scalable, efficient
-              web applications. Always eager to learn and grow, I embrace modern
-              technologies and continuously explore new tools to create
-              innovative and impactful solutions.
+              I’m a final-year BTech student at SRM University, passionate about
+              solving complex problems and building scalable web applications.
+              Eager to learn and innovate, I’m currently exploring AI and
+              working on a RAG-based application to build smarter, context-aware
+              solutions.
             </motion.div>
 
             {/* Stats Section */}
@@ -236,24 +236,38 @@ export default function Home() {
               PROJECTS <br /> <span className="text-gray-500">BUILT</span>
             </div>
             <div className="mt-2">
-              <ProjectsCard
-                imgURL={Projectpic()}
-                title="Second Brain"
-                description="Keep your brain happy"
-                icon={<ArrowIcons />}
-              />
-              <ProjectsCard
-                imgURL={Projectpic()}
-                title="Second Brain"
-                description="Keep your brain happy"
-                icon={<ArrowIcons />}
-              />
-              <ProjectsCard
-                imgURL={Projectpic()}
-                title="Second Brain"
-                description="Keep your brain happy"
-                icon={<ArrowIcons />}
-              />
+              <div
+                onClick={() => handleClick("https://addiscombepizza.co.uk/ ")}
+              >
+                <ProjectsCard
+                  imgURL={Projectpic()}
+                  title="Pizza Booking Web App"
+                  description="Online platform for ordering pizzas and managing shop orders."
+                  icon={<ArrowIcons />}
+                />
+              </div>
+              <div
+                onClick={() =>
+                  handleClick("https://github.com/mohithpranav/srm-connect-be")
+                }
+              >
+                <ProjectsCard
+                  imgURL={Projectpic()}
+                  title="College Connect"
+                  description="Connect with people based on shared interests, hackathons, and desired skill sets. Chat and collaborate easily."
+                  icon={<ArrowIcons />}
+                />
+              </div>
+              <div
+                onClick={() => handleClick("https://addiscombepizza.co.uk/ ")}
+              >
+                <ProjectsCard
+                  imgURL={Projectpic()}
+                  title="Second Brain"
+                  description="Keep your brain happy"
+                  icon={<ArrowIcons />}
+                />
+              </div>
             </div>
           </motion.div>
 
