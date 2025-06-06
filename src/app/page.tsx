@@ -236,8 +236,12 @@ export default function Home() {
               PROJECTS <br /> <span className="text-gray-500">BUILT</span>
             </div>
             <div className="mt-2">
-              <div
-                onClick={() => handleClick("https://addiscombepizza.co.uk/ ")}
+              <motion.div
+                whileHover={{
+                  scale: 1.02,
+                  transition: { duration: 0.2 },
+                }}
+                onClick={() => handleClick("https://addiscombepizza.co.uk/")}
               >
                 <ProjectsCard
                   imgURL={Projectpic()}
@@ -245,8 +249,13 @@ export default function Home() {
                   description="Online platform for ordering pizzas and managing shop orders."
                   icon={<ArrowIcons />}
                 />
-              </div>
-              <div
+              </motion.div>
+
+              <motion.div
+                whileHover={{
+                  scale: 1.02,
+                  transition: { duration: 0.2 },
+                }}
                 onClick={() =>
                   handleClick("https://github.com/mohithpranav/srm-connect-be")
                 }
@@ -257,17 +266,24 @@ export default function Home() {
                   description="Connect with people based on shared interests, hackathons, and desired skill sets. Chat and collaborate easily."
                   icon={<ArrowIcons />}
                 />
-              </div>
-              <div
-                onClick={() => handleClick("https://addiscombepizza.co.uk/ ")}
+              </motion.div>
+
+              <motion.div
+                whileHover={{
+                  scale: 1.02,
+                  transition: { duration: 0.2 },
+                }}
+                onClick={() =>
+                  handleClick("https://nike-chi-amber.vercel.app/")
+                }
               >
                 <ProjectsCard
                   imgURL={Projectpic()}
-                  title="Second Brain"
-                  description="Keep your brain happy"
+                  title="Nike landing page"
+                  description="A responsive landing page for Nike, showcasing products and features."
                   icon={<ArrowIcons />}
                 />
-              </div>
+              </motion.div>
             </div>
           </motion.div>
 
