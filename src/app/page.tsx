@@ -241,7 +241,7 @@ export default function Home() {
                   scale: 1.02,
                   transition: { duration: 0.2 },
                 }}
-                onClick={() => handleClick("https://addiscombepizza.co.uk/")}
+                onClick={() => handleClick("https://circlepizzapizza.co.uk/")}
               >
                 <ProjectsCard
                   imgURL={Projectpic()}
